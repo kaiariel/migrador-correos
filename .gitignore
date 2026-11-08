@@ -1,0 +1,13 @@
+# Datos de uso (nunca subirlos: tienen correos, casillas y preferencias de quien usa la app)
+config.ini
+cuentas.csv
+estado_app.json
+automatica.json
+filtros.json
+registros/
+respaldo/
+*.bin
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Migrador de correo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Cpath d='M16 22h32v20H16z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M16 22l16 12 16-12' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/ui/estilos.css">
+  <script>
+    window.TOKEN = "{{TOKEN}}";
+    try { const t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script type="module" src="/ui/app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="lateral">
+      <button class="marca" data-ir="inicio" title="Ir al inicio">
+        <span class="logo" data-icono="envelope-simple"></span>
+        <span class="marca-texto">
+          <strong>Migrador de correo</strong>
+          <small>Copias locales y migración de correo</small>
+        </span>
+      </button>
+      <nav class="pasos" id="pasos" aria-label="Pasos"></nav>
+      <div class="lateral-pie">
+        <button class="boton fantasma chico" data-accion="abrir" data-que="respaldo">
+          <span data-icono="folder-open"></span>Abrir copia local
+        </button>
+        <div class="lateral-fila">
+          <span class="conexion" id="conexion"><i></i>Conectado</span>
+          <button class="icono-boton" id="tema" aria-label="Cambiar tema" title="Cambiar tema"></button>
+        </div>
+      </div>
+    </aside>
+    <main class="principal" id="vista" tabindex="-1"></main>
+  </div>
+  <div class="avisos" id="avisos" aria-live="polite"></div>
+  <dialog class="modal" id="modal"></dialog>
+</body>
+</html>
